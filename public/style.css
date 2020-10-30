@@ -1,0 +1,74 @@
+body {
+  background-color: black;
+}
+
+h1 {
+  font-family: 'Monoton', cursive;
+  color: hotpink;
+  font-weight: 400;
+  font-size: 128px;
+  text-align: center;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff,
+    0 0 80px pink, 0 0 90px pink, 0 0 100px pink, 0 0 150px pink;
+}
+
+h1 span {
+  animation: blink linear infinite 2s;
+}
+
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79% {
+    color: #333;
+  }
+  80% {
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+a {
+  color: hotpink;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 10px 20px;
+}
+
+a:hover {
+  color: white;
+  background-color: hotpink;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
