@@ -2,10 +2,14 @@ function ScoreCard({ score, currentQuestionNum }) {
   return (
     <div className="flex space-between">
       <div>
-        <p>Question: {currentQuestionNum}/10</p>
+        <p>
+          Question: <span>{currentQuestionNum}/10</span>
+        </p>
       </div>
       <div>
-        <p>Points: {score || 0}</p>
+        <p>
+          # of Correct Answers: <span>{score || 0}</span>
+        </p>
       </div>
     </div>
   );
