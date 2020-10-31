@@ -5,6 +5,7 @@ import ScoreCard from './scoreCard';
 
 function Question({ setcurrentDisplay, shuffle, score, setScore }) {
   const [currentQuestionNum, setcurrentQuestionNum] = useState(1);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const question = data[currentQuestionNum - 1].question;
   const correctAnswer = data[currentQuestionNum - 1].correct;
@@ -17,22 +18,35 @@ function Question({ setcurrentDisplay, shuffle, score, setScore }) {
   });
 
   const onClick = (selectedAnswer) => {
+    setIsSubmitted(true);
     if (selectedAnswer === correctAnswer) setScore(score + 1);
     if (currentQuestionNum === 10) setcurrentDisplay('end');
-    else setcurrentQuestionNum(currentQuestionNum + 1);
+    // else setcurrentQuestionNum(currentQuestionNum + 1);
   };
+
   return (
     <div>
       <NavBar setcurrentDisplay={setcurrentDisplay} />
       <ScoreCard score={score} currentQuestionNum={currentQuestionNum} />
       <h2>{question}</h2>
-      {answerOptions.map((option, idx) => (
-        <div className="flex center">
-          <button type="button" key={idx} onClick={() => onClick(option)}>
-            {option}
-          </button>
-        </div>
-      ))}
+      {answerOptions.map((option, idx) => {
+        const isCorrect =
+          option === data[currentQuestionNum - 1].correct
+            ? 'correct'
+            : 'incorrect';
+        return (
+          <div className="flex center">
+            <button
+              type="button"
+              className={isSubmitted && isCorrect}
+              key={idx}
+              onClick={() => onClick(option)}
+            >
+              {option}
+            </button>
+          </div>
+        );
+      })}
     </div>
   );
 }

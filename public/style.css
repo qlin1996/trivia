@@ -103,3 +103,15 @@ button:hover {
   justify-content: space-between;
   margin: auto 1.5em;
 }
+
+.correct {
+  color: white;
+  background-color: green;
+  border: 1px solid green;
+}
+
+.incorrect {
+  color: white;
+  background-color: red;
+  border: 1px solid red;
+}
