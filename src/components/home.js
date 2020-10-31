@@ -1,7 +1,11 @@
-import data from '../data';
+import data from '../data.json';
 
-function Home() {
-  console.log(data[0]);
+function Home({ setcurrentDisplay, shuffle }) {
+  const onClick = () => {
+    shuffle(data);
+    setcurrentDisplay('question');
+  };
+
   return (
     <div>
       <h1>
@@ -9,7 +13,9 @@ function Home() {
       </h1>
       <h2>Are you ready to win?</h2>
       <div className="flex-center">
-        <a href="/">Start</a>
+        <button type="button" onClick={onClick}>
+          Start
+        </button>
       </div>
     </div>
   );

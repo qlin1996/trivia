@@ -49,21 +49,26 @@ h1 span {
   }
 }
 
-h2 {
+h2,
+p {
   font-family: 'Quicksand', sans-serif;
   color: white;
   text-align: center;
 }
 
-a {
+button {
+  font-family: 'Quicksand', sans-serif;
   color: hotpink;
   letter-spacing: 4px;
-  text-decoration: none;
   font-size: 24px;
+  font-weight: 900;
   padding: 10px 20px;
+  background-color: Transparent;
+  border: 1px solid hotpink;
+  outline: none;
 }
 
-a:hover {
+button:hover {
   color: white;
   background-color: hotpink;
 }
@@ -71,4 +76,5 @@ a:hover {
 .flex-center {
   display: flex;
   justify-content: center;
+  margin: 2em 0;
 }
