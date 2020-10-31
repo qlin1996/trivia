@@ -6,6 +6,7 @@ import End from './end';
 function App() {
   const [currentDisplay, setcurrentDisplay] = useState('home');
   const [score, setScore] = useState(0);
+  const [questions, setQuestions] = useState([]);
 
   const shuffle = (arr) => {
     let m = arr.length;
@@ -23,6 +24,7 @@ function App() {
           setcurrentDisplay={setcurrentDisplay}
           shuffle={shuffle}
           setScore={setScore}
+          setQuestions={setQuestions}
         />
       )}
       {currentDisplay === 'question' && (
@@ -31,6 +33,7 @@ function App() {
           shuffle={shuffle}
           score={score}
           setScore={setScore}
+          questions={questions}
         />
       )}
       {currentDisplay === 'end' && (
