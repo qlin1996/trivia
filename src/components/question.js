@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState } from 'react';
 import NavBar from './navbar';
 import ScoreCard from './scoreCard';
 
@@ -10,11 +10,8 @@ function Question({ setcurrentDisplay, shuffle, score, setScore, questions }) {
   const correctAnswer = questions[currentQuestionNum - 1].correct;
   const inCorrectAnswer = questions[currentQuestionNum - 1].incorrect;
   const answerOptions = [correctAnswer, ...inCorrectAnswer];
+  const shuffledAnswerOptions = shuffle(answerOptions, 4);
   console.log(questions[currentQuestionNum - 1]);
-
-  useLayoutEffect(() => {
-    shuffle(answerOptions);
-  });
 
   const onClick = (selectedAnswer) => {
     setIsSubmitted(true);
@@ -31,7 +28,7 @@ function Question({ setcurrentDisplay, shuffle, score, setScore, questions }) {
       <NavBar setcurrentDisplay={setcurrentDisplay} />
       <ScoreCard score={score} currentQuestionNum={currentQuestionNum} />
       <h2>{question}</h2>
-      {answerOptions.map((option, idx) => {
+      {shuffledAnswerOptions.map((option, idx) => {
         const isCorrect =
           option === questions[currentQuestionNum - 1].correct
             ? 'correct'

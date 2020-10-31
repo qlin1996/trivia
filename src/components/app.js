@@ -8,13 +8,17 @@ function App() {
   const [score, setScore] = useState(0);
   const [questions, setQuestions] = useState([]);
 
-  const shuffle = (arr) => {
-    let m = arr.length;
-    while (m) {
-      let i = Math.floor(Math.random() * m--);
-      [arr[i], arr[m]] = [arr[m], arr[i]];
+  const shuffle = (arr, n) => {
+    let numsArr = [];
+    let shuffledArr = [];
+    while (numsArr.length < n) {
+      let randomNum = Math.floor(Math.random() * n);
+      if (!numsArr.includes(randomNum)) {
+        numsArr.push(randomNum);
+        shuffledArr.push(arr[randomNum]);
+      }
     }
-    return arr;
+    return shuffledArr;
   };
 
   return (
