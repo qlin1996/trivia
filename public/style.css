@@ -54,6 +54,7 @@ h2 {
   color: white;
   text-align: center;
   font-size: 32px;
+  font-weight: 300;
 }
 
 .logo {
@@ -67,6 +68,7 @@ p {
   font-family: 'Quicksand', sans-serif;
   color: hotpink;
   font-size: 18px;
+  font-weight: 300;
 }
 
 p span {
@@ -78,7 +80,7 @@ button {
   color: hotpink;
   letter-spacing: 4px;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 300;
   padding: 10px 20px;
   background-color: Transparent;
   border: 1px solid hotpink;
@@ -107,11 +109,12 @@ button {
   color: white;
   background-color: green;
   border: 1px solid green;
-  box-shadow: 0 0 5px lightgreen, 0 0 10px lightgreen, 0 0 20px lightgreen,
-    0 0 40px lightgreen;
+  box-shadow: 0 0 2px lightgreen, 0 0 4px lightgreen, 0 0 8px lightgreen,
+    0 0 16px lightgreen;
 }
 
 .incorrect {
-  color: red;
-  border: 1px solid red;
+  color: white;
+  background-color: darkred;
+  box-shadow: 0 0 2px red, 0 0 4px red, 0 0 8px red, 0 0 16px red;
 }

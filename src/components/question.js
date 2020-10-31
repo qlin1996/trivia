@@ -24,7 +24,7 @@ function Question({ setcurrentDisplay, shuffle, score, setScore }) {
       if (currentQuestionNum === 10) setcurrentDisplay('end');
       else setcurrentQuestionNum(currentQuestionNum + 1);
       setIsSubmitted(false);
-    }, 3000);
+    }, 2000);
   };
 
   return (
