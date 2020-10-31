@@ -78,3 +78,8 @@ button:hover {
   justify-content: center;
   margin: 2em 0;
 }
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}

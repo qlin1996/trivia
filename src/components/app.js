@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import Home from './home';
 import Question from './question';
+import End from './end';
 
 function App() {
   const [currentDisplay, setcurrentDisplay] = useState('home');
-  const [currentQuestionNum, setcurrentQuestionNum] = useState(0);
+  const [score, setScore] = useState(0);
 
   const shuffle = (arr) => {
     let m = arr.length;
@@ -22,11 +23,14 @@ function App() {
       )}
       {currentDisplay === 'question' && (
         <Question
-          currentQuestionNum={currentQuestionNum}
-          setcurrentQuestionNum={setcurrentQuestionNum}
           setcurrentDisplay={setcurrentDisplay}
           shuffle={shuffle}
+          score={score}
+          setScore={setScore}
         />
+      )}
+      {currentDisplay === 'end' && (
+        <End setcurrentDisplay={setcurrentDisplay} score={score} />
       )}
     </div>
   );
