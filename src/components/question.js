@@ -5,12 +5,12 @@ import ScoreCard from './scoreCard';
 
 function Question({ setcurrentDisplay, shuffle, score, setScore }) {
   const [currentQuestionNum, setcurrentQuestionNum] = useState(1);
-  console.log('score', score);
 
   const question = data[currentQuestionNum - 1].question;
   const correctAnswer = data[currentQuestionNum - 1].correct;
   const inCorrectAnswer = data[currentQuestionNum - 1].incorrect;
   const answerOptions = [correctAnswer, ...inCorrectAnswer];
+  console.log(data[currentQuestionNum - 1]);
 
   useEffect(() => {
     shuffle(answerOptions);
@@ -23,7 +23,7 @@ function Question({ setcurrentDisplay, shuffle, score, setScore }) {
   };
   return (
     <div>
-      <NavBar />
+      <NavBar setcurrentDisplay={setcurrentDisplay} />
       <ScoreCard score={score} currentQuestionNum={currentQuestionNum} />
       <h2>{question}</h2>
       {answerOptions.map((option, idx) => (
