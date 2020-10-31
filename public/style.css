@@ -81,11 +81,6 @@ button {
   outline: none;
 }
 
-button:hover {
-  color: white;
-  background-color: hotpink;
-}
-
 .flex {
   display: flex;
 }
@@ -108,10 +103,11 @@ button:hover {
   color: white;
   background-color: green;
   border: 1px solid green;
+  box-shadow: 0 0 5px lightgreen, 0 0 10px lightgreen, 0 0 20px lightgreen,
+    0 0 40px lightgreen;
 }
 
 .incorrect {
-  color: white;
-  background-color: red;
+  color: red;
   border: 1px solid red;
 }
