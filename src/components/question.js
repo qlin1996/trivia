@@ -38,11 +38,10 @@ function Question({ setcurrentDisplay, shuffle, score, setScore }) {
             ? 'correct'
             : 'incorrect';
         return (
-          <div className="flex center">
+          <div className="flex center" key={idx}>
             <button
               type="button"
-              className={isSubmitted && isCorrect}
-              key={idx}
+              className={isSubmitted ? isCorrect : ''}
               onClick={() => onClick(option)}
             >
               {option}
