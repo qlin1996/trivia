@@ -12,7 +12,7 @@ function Home({ setcurrentDisplay, shuffle }) {
         T<span>r</span>ivia
       </h1>
       <h2>Are you ready to win?</h2>
-      <div className="flex-center">
+      <div className="flex center">
         <button type="button" onClick={onClick}>
           Start
         </button>

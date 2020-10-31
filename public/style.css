@@ -49,11 +49,24 @@ h1 span {
   }
 }
 
-h2,
-p {
+h2 {
   font-family: 'Quicksand', sans-serif;
   color: white;
   text-align: center;
+  font-size: 32px;
+}
+
+.logo {
+  font-family: 'Monoton', cursive;
+  color: hotpink;
+  font-weight: 400;
+  margin: 0.3em 0.5em;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  color: hotpink;
+  font-size: 18px;
 }
 
 button {
@@ -61,7 +74,7 @@ button {
   color: hotpink;
   letter-spacing: 4px;
   font-size: 24px;
-  font-weight: 900;
+  font-weight: 600;
   padding: 10px 20px;
   background-color: Transparent;
   border: 1px solid hotpink;
@@ -73,13 +86,20 @@ button:hover {
   background-color: hotpink;
 }
 
-.flex-center {
+.flex {
   display: flex;
+}
+
+.center {
   justify-content: center;
   margin: 2em 0;
 }
 
-.flex-column {
-  display: flex;
+.column {
   flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+  margin: auto 1.5em;
 }
