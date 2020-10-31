@@ -19,7 +19,11 @@ function App() {
   return (
     <div>
       {currentDisplay === 'home' && (
-        <Home setcurrentDisplay={setcurrentDisplay} shuffle={shuffle} />
+        <Home
+          setcurrentDisplay={setcurrentDisplay}
+          shuffle={shuffle}
+          setScore={setScore}
+        />
       )}
       {currentDisplay === 'question' && (
         <Question

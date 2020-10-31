@@ -1,8 +1,9 @@
 import data from '../data.json';
 
-function Home({ setcurrentDisplay, shuffle }) {
+function Home({ setcurrentDisplay, shuffle, setScore }) {
   const onClick = () => {
     shuffle(data);
+    setScore(0);
     setcurrentDisplay('question');
   };
 
