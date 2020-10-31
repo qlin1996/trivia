@@ -20,8 +20,11 @@ function Question({ setcurrentDisplay, shuffle, score, setScore }) {
   const onClick = (selectedAnswer) => {
     setIsSubmitted(true);
     if (selectedAnswer === correctAnswer) setScore(score + 1);
-    if (currentQuestionNum === 10) setcurrentDisplay('end');
-    // else setcurrentQuestionNum(currentQuestionNum + 1);
+    setTimeout(() => {
+      if (currentQuestionNum === 10) setcurrentDisplay('end');
+      else setcurrentQuestionNum(currentQuestionNum + 1);
+      setIsSubmitted(false);
+    }, 3000);
   };
 
   return (
