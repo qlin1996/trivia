@@ -18,6 +18,10 @@ function Home({ setCurrentDisplay, setScore, setQuestions, timerOn }) {
       <div className="description">
         <h2>Are you ready to win?</h2>
         <h2>Test your Trivia skills with this 10 question game.</h2>
+        <h2>
+          Your all time best:{' '}
+          {localStorage.getItem('best') ? localStorage.getItem('best') : 0}/10
+        </h2>
       </div>
       <div className="flex center">
         <button type="button" onClick={onClick}>
