@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './navbar';
 import ScoreCard from './scoreCard';
+import shuffle from '../utils/shuffle';
 
-function Question({ setCurrentDisplay, shuffle, score, setScore, questions }) {
+function Question({ setCurrentDisplay, score, setScore, questions }) {
   const [currentQuestionNum, setcurrentQuestionNum] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [answerOptions, setAnswerOptions] = useState([]);

@@ -8,25 +8,11 @@ function App() {
   const [score, setScore] = useState(0);
   const [questions, setQuestions] = useState([]);
 
-  const shuffle = (arr, n) => {
-    let numsArr = [];
-    let shuffledArr = [];
-    while (numsArr.length < n) {
-      let randomNum = Math.floor(Math.random() * n);
-      if (!numsArr.includes(randomNum)) {
-        numsArr.push(randomNum);
-        shuffledArr.push(arr[randomNum]);
-      }
-    }
-    return shuffledArr;
-  };
-
   return (
     <div>
       {currentDisplay === 'home' && (
         <Home
           setCurrentDisplay={setCurrentDisplay}
-          shuffle={shuffle}
           setScore={setScore}
           setQuestions={setQuestions}
         />
@@ -34,7 +20,6 @@ function App() {
       {currentDisplay === 'question' && (
         <Question
           setCurrentDisplay={setCurrentDisplay}
-          shuffle={shuffle}
           score={score}
           setScore={setScore}
           questions={questions}
