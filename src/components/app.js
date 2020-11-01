@@ -7,6 +7,13 @@ function App() {
   const [currentDisplay, setCurrentDisplay] = useState('home');
   const [score, setScore] = useState(0);
   const [questions, setQuestions] = useState([]);
+  const [time, setTime] = useState(0);
+  const [timerFunc, setTimerFunc] = useState('');
+
+  const timerOn = (boo) => {
+    if (boo) setTimerFunc(setInterval(() => setTime((time) => time + 1), 1000));
+    else clearInterval(timerFunc);
+  };
 
   return (
     <div>
@@ -15,6 +22,7 @@ function App() {
           setCurrentDisplay={setCurrentDisplay}
           setScore={setScore}
           setQuestions={setQuestions}
+          timerOn={timerOn}
         />
       )}
       {currentDisplay === 'question' && (
@@ -23,10 +31,18 @@ function App() {
           score={score}
           setScore={setScore}
           questions={questions}
+          time={time}
+          setTime={setTime}
         />
       )}
       {currentDisplay === 'end' && (
-        <End setCurrentDisplay={setCurrentDisplay} score={score} />
+        <End
+          setCurrentDisplay={setCurrentDisplay}
+          score={score}
+          time={time}
+          timerOn={timerOn}
+          setTime={setTime}
+        />
       )}
     </div>
   );

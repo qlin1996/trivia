@@ -1,4 +1,4 @@
-function ScoreCard({ score, currentQuestionNum }) {
+function ScoreCard({ score, currentQuestionNum, time }) {
   return (
     <div className="flex space-between">
       <div>
@@ -8,7 +8,10 @@ function ScoreCard({ score, currentQuestionNum }) {
       </div>
       <div>
         <p>
-          # of Correct Answers: <span>{score || 0}</span>
+          Score: <span>{score || 0}</span>
+        </p>
+        <p>
+          Time: <span>{time}</span>
         </p>
       </div>
     </div>

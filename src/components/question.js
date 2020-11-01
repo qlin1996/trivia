@@ -3,7 +3,14 @@ import NavBar from './navbar';
 import ScoreCard from './scoreCard';
 import shuffle from '../utils/shuffle';
 
-function Question({ setCurrentDisplay, score, setScore, questions }) {
+function Question({
+  setCurrentDisplay,
+  score,
+  setScore,
+  questions,
+  time,
+  setTime,
+}) {
   const [currentQuestionNum, setcurrentQuestionNum] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [answerOptions, setAnswerOptions] = useState([]);
@@ -37,8 +44,12 @@ function Question({ setCurrentDisplay, score, setScore, questions }) {
 
   return (
     <div>
-      <NavBar setCurrentDisplay={setCurrentDisplay} />
-      <ScoreCard score={score} currentQuestionNum={currentQuestionNum} />
+      <NavBar setCurrentDisplay={setCurrentDisplay} setTime={setTime} />
+      <ScoreCard
+        score={score}
+        currentQuestionNum={currentQuestionNum}
+        time={time}
+      />
       <h2>{question}</h2>
       {answerOptions.map((option, idx) => {
         const isCorrect =

@@ -1,12 +1,13 @@
 import data from '../data.json';
 import shuffle from '../utils/shuffle';
 
-function Home({ setCurrentDisplay, setScore, setQuestions }) {
+function Home({ setCurrentDisplay, setScore, setQuestions, timerOn }) {
   const onClick = () => {
     const shuffledQuestions = shuffle(data, 10);
     setQuestions(shuffledQuestions);
     setScore(0);
     setCurrentDisplay('question');
+    timerOn(true);
   };
 
   return (
