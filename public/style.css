@@ -118,3 +118,25 @@ button {
   background-color: darkred;
   box-shadow: 0 0 2px red, 0 0 4px red, 0 0 8px red, 0 0 16px red;
 }
+
+.description {
+  margin: 0 2em 4em 2em;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 80px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  p {
+    font-size: 16px;
+  }
+  button {
+    font-size: 20px;
+  }
+  .center {
+    margin: 1em 0;
+  }
+}

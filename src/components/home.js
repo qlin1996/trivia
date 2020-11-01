@@ -15,7 +15,10 @@ function Home({ setCurrentDisplay, setScore, setQuestions, timerOn }) {
       <h1>
         T<span>r</span>ivia
       </h1>
-      <h2>Are you ready to win?</h2>
+      <div className="description">
+        <h2>Are you ready to win?</h2>
+        <h2>Test your Trivia skills with this 10 question game.</h2>
+      </div>
       <div className="flex center">
         <button type="button" onClick={onClick}>
           Start
