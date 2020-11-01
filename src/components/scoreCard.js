@@ -1,3 +1,5 @@
+import { timeConverter } from '../utils/timeConverter';
+
 function ScoreCard({ score, currentQuestionNum, time }) {
   return (
     <div className="flex space-between">
@@ -10,8 +12,10 @@ function ScoreCard({ score, currentQuestionNum, time }) {
         <p>
           Score: <span>{score || 0}</span>
         </p>
+      </div>
+      <div>
         <p>
-          Time: <span>{time}</span>
+          Time: <span>{timeConverter(time)}</span>
         </p>
       </div>
     </div>
