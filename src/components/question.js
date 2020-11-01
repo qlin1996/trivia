@@ -1,23 +1,26 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from './navbar';
 import ScoreCard from './scoreCard';
 
-function Question({ setcurrentDisplay, shuffle, score, setScore, questions }) {
+function Question({ setCurrentDisplay, shuffle, score, setScore, questions }) {
   const [currentQuestionNum, setcurrentQuestionNum] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [answerOptions, setAnswerOptions] = useState([]);
 
   const question = questions[currentQuestionNum - 1].question;
-  console.log(questions[currentQuestionNum - 1]);
 
   useEffect(() => {
     const correctAnswer = questions[currentQuestionNum - 1].correct;
     const inCorrectAnswer = questions[currentQuestionNum - 1].incorrect;
-    let answerOptions = [correctAnswer, ...inCorrectAnswer];
+    let shuffledAnswerOptions = [correctAnswer, ...inCorrectAnswer];
     if (currentQuestionNum <= 10) {
-      answerOptions = shuffle(answerOptions, answerOptions.length);
-      setAnswerOptions(answerOptions);
+      shuffledAnswerOptions = shuffle(
+        shuffledAnswerOptions,
+        shuffledAnswerOptions.length
+      );
+      setAnswerOptions(shuffledAnswerOptions);
     }
+    return () => {};
   }, [currentQuestionNum]);
 
   const onClick = (selectedAnswer) => {
@@ -25,7 +28,7 @@ function Question({ setcurrentDisplay, shuffle, score, setScore, questions }) {
     if (selectedAnswer === questions[currentQuestionNum - 1].correct)
       setScore(score + 1);
     setTimeout(() => {
-      if (currentQuestionNum === 10) setcurrentDisplay('end');
+      if (currentQuestionNum === 10) setCurrentDisplay('end');
       else setcurrentQuestionNum(currentQuestionNum + 1);
       setIsSubmitted(false);
     }, 2000);
@@ -33,7 +36,7 @@ function Question({ setcurrentDisplay, shuffle, score, setScore, questions }) {
 
   return (
     <div>
-      <NavBar setcurrentDisplay={setcurrentDisplay} />
+      <NavBar setCurrentDisplay={setCurrentDisplay} />
       <ScoreCard score={score} currentQuestionNum={currentQuestionNum} />
       <h2>{question}</h2>
       {answerOptions.map((option, idx) => {

@@ -1,8 +1,8 @@
-function NavBar({ setcurrentDisplay }) {
+function NavBar({ setCurrentDisplay }) {
   return (
     <div>
       <div className="flex">
-        <h2 className="logo" onClick={() => setcurrentDisplay('home')}>
+        <h2 className="logo" onClick={() => setCurrentDisplay('home')}>
           Trivia
         </h2>
       </div>

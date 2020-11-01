@@ -4,7 +4,7 @@ import Question from './question';
 import End from './end';
 
 function App() {
-  const [currentDisplay, setcurrentDisplay] = useState('home');
+  const [currentDisplay, setCurrentDisplay] = useState('home');
   const [score, setScore] = useState(0);
   const [questions, setQuestions] = useState([]);
 
@@ -25,7 +25,7 @@ function App() {
     <div>
       {currentDisplay === 'home' && (
         <Home
-          setcurrentDisplay={setcurrentDisplay}
+          setCurrentDisplay={setCurrentDisplay}
           shuffle={shuffle}
           setScore={setScore}
           setQuestions={setQuestions}
@@ -33,7 +33,7 @@ function App() {
       )}
       {currentDisplay === 'question' && (
         <Question
-          setcurrentDisplay={setcurrentDisplay}
+          setCurrentDisplay={setCurrentDisplay}
           shuffle={shuffle}
           score={score}
           setScore={setScore}
@@ -41,7 +41,7 @@ function App() {
         />
       )}
       {currentDisplay === 'end' && (
-        <End setcurrentDisplay={setcurrentDisplay} score={score} />
+        <End setCurrentDisplay={setCurrentDisplay} score={score} />
       )}
     </div>
   );

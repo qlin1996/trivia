@@ -1,11 +1,11 @@
 import data from '../data.json';
 
-function Home({ setcurrentDisplay, shuffle, setScore, setQuestions }) {
+function Home({ setCurrentDisplay, shuffle, setScore, setQuestions }) {
   const onClick = () => {
     const shuffledQuestions = shuffle(data, 10);
     setQuestions(shuffledQuestions);
     setScore(0);
-    setcurrentDisplay('question');
+    setCurrentDisplay('question');
   };
 
   return (

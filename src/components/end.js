@@ -1,12 +1,12 @@
 import NavBar from './navbar';
 
-function End({ setcurrentDisplay, score }) {
+function End({ setCurrentDisplay, score }) {
   const onClick = () => {
-    setcurrentDisplay('home');
+    setCurrentDisplay('home');
   };
   return (
     <div>
-      <NavBar />
+      <NavBar setCurrentDisplay={setCurrentDisplay} />
       <div className="flex column">
         <h2>You got {score}/10 correct!</h2>
         <div className="flex center">
