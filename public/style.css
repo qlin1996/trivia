@@ -87,11 +87,6 @@ button {
   outline: none;
 }
 
-button:hover {
-  color: white;
-  background-color: hotpink;
-}
-
 .flex {
   display: flex;
 }
@@ -143,5 +138,12 @@ button:hover {
   }
   .center {
     margin: 1em 0;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  button:hover {
+    color: white;
+    background-color: hotpink;
   }
 }
