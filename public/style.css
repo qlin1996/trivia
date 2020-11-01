@@ -87,6 +87,11 @@ button {
   outline: none;
 }
 
+button:hover {
+  color: white;
+  background-color: hotpink;
+}
+
 .flex {
   display: flex;
 }
@@ -106,16 +111,16 @@ button {
 }
 
 .correct {
-  color: white;
-  background-color: green;
+  color: white !important;
+  background-color: green !important;
   border: 1px solid green;
   box-shadow: 0 0 2px lightgreen, 0 0 4px lightgreen, 0 0 8px lightgreen,
     0 0 16px lightgreen;
 }
 
 .incorrect {
-  color: white;
-  background-color: darkred;
+  color: white !important;
+  background-color: darkred !important;
   box-shadow: 0 0 2px red, 0 0 4px red, 0 0 8px red, 0 0 16px red;
 }
 
