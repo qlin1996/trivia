@@ -62,6 +62,7 @@ function Question({
               type="button"
               className={isSubmitted ? isCorrect : ''}
               onClick={() => onClick(option)}
+              disabled={isSubmitted}
             >
               {option}
             </button>
